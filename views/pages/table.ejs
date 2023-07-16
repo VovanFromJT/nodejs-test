@@ -1,0 +1,20 @@
+<head>
+    <style>
+        table, td {
+            border: 1px solid black;
+            border-collapse: collapse;
+        }
+    </style>
+</head>
+<body>
+<table>
+    <% for(let i = 0; i < appointments.length; i++) { %>
+    <tr style="background-color: <%= appointments[i].color %>;"><td><%= appointments[i].id_patient + ", " + appointments[i].id_doctor + ", " + appointments[i].time %></td></tr>
+    <% } %>
+</table>
+<table>
+    <% for(let i = 0; i < appointments.length; i++) { %>
+    <tr style="background-color: <%= appointments[i].color %>;"><td><%= appointments[i].id_patient + ", " + appointments[i].id_doctor + ", " + appointments[i].time %></td></tr>
+    <% } %>
+</table>
+</body>

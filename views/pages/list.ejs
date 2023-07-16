@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        label {
+            font-size: x-large;
+        }
+
+        textarea {
+            width: 300px;
+            height: 500px;
+            word-break: break-word;
+        }
+
+        /* Create three equal columns that floats next to each other */
+        .column {
+            float: left;
+            width: 33.33%;
+            padding: 10px;
+            height: 300px; /* Should be removed. Only for demonstration */
+        }
+
+        /* Clear floats after the columns */
+        .row:after {
+            content: "";
+            display: table;
+            clear: both;
+        }
+
+        /* Responsive layout - makes the three columns stack on top of each other instead of next to each other */
+        @media screen and (max-width: 600px) {
+            .column {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+<div class="row">
+    <form action="/data" id="posts">
+    <div class="column">
+            <label for="patients">Patients</label><br>
+        <textarea form ="posts" name="patients" id="patients" cols="35" wrap="soft"></textarea>
+    </div>
+    <div class="column">
+            <label for="doctors">Doctors</label><br>
+        <textarea form ="posts" name="doctors" id="doctors" cols="35" wrap="soft"></textarea>
+    </div>
+    <div class="column">
+            <label for="appointments">Appointments</label><br>
+            <textarea form ="posts" name="appointments" id="appointments" cols="35" wrap="soft"></textarea>
+            <input type="submit" value="Send data" formmethod="post" class="button">
+            <input type="submit" value="Clear DB" formmethod="get" class="button">
+    </div>
+    </form>
+</div>
+</body>
+</html>
